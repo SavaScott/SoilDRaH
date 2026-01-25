@@ -219,7 +219,7 @@ The `of_variable` being used here are:
 + soil_class
 + inital_planting
 + observation_year
-+ 
++ core_description
 
 ```{r}
 
@@ -235,5 +235,7 @@ studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~source,
                   'inital_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
                   'observation_year', 'value', '1997', paste('Method ln23:', data.lvl0.df$method[23]),
                   'core_description', 'value', '30 by 30 m plots with trees at two spacings (1 by 1 m and 3 by 3 m)', paste('Method ln12:', data.lvl0.df$method[12]),
+                   'citation', 'value', format(data.lvl0.df$citation$primary), 'journal citation',
+                   'doi', 'value', data.lvl0.df$citation$primary$doi, 'journal citation')
                   
 ```
