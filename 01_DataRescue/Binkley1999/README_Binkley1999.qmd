@@ -215,7 +215,6 @@ The `of_variable` being used here are:
 + mean_air_temperature
 + mean_rainfall
 + elevation
-+ soil_ph
 + soil_class
 + inital_planting
 + observation_year
@@ -224,18 +223,56 @@ The `of_variable` being used here are:
 ```{r}
 
 studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~source,
-                   'region', 'value', '13 km NNE of downtown Hilo, HI', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
-                   'latitude', 'value', '19°50\'28.1" N', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
+                    'region', 'value', '13 km NNE of downtown Hilo, HI', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
+                     'latitude', 'value', '19°50\'28.1" N', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                    'longitude', 'value', '155°7\'28.3" W', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                    'mean_air_temperature', 'value', '21°C',paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
-                   'elevation', 'value', '350 m', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
-                   'mean_rainfall', 'value', '4 m yr<sup>-1</sup>', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')), 
-                   'soil_ph', 'value', 'pH 5-6 in water', paste('Method ln4:',paste(data.lvl0.df$method[4], collapse = ' ')),
-                   'soil_class', 'value', 'Kaiwiki thixotropic, isothermic Typic Hydrandepts', paste('Method ln4:',paste(data.lvl0.df$method[4], collapse = ' ')),
-                  'inital_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
+                     'mean_rainfall', 'value', '4 m yr<sup>-1</sup>', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
+                   'elevation', 'value', '350', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
+                    'soil_class', 'value', 'Kaiwiki thixotropic, isothermic Typic Hydrandepts', paste('Method ln4:',paste(data.lvl0.df$method[4], collapse = ' ')),
+                   'inital_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
                   'observation_year', 'value', '1997', paste('Method ln23:', data.lvl0.df$method[23]),
+                  'sample_prep', 'oven dried at 100 C to constant weight', paste('Method ln22':data.lvl0.df$method[22]),
                   'core_description', 'value', '30 by 30 m plots with trees at two spacings (1 by 1 m and 3 by 3 m)', paste('Method ln12:', data.lvl0.df$method[12]),
                    'citation', 'value', format(data.lvl0.df$citation$primary), 'journal citation',
                    'doi', 'value', data.lvl0.df$citation$primary$doi, 'journal citation')
                   
+Table1Primary <- data.lvl0.ls$data$Table1$primary |>
+   mutate(row_id = paste0('R', 1:n())) |>
+    pivot_longer(cols = -row_id,
+               names_to = 'column_name', values_to = 'with_entry',
+               values_drop_na = TRUE) |>
+  mutate(of_variable = case_when(
+         column_name == "Depth (cm)" ~ "soil_depth",
+         column_name == "C (g m<sup>-2</sup>)" ~ "soil_carbon",
+         column_name == "N (g m<sup>-2</sup>)" ~ "soil_nitrogen",
+         column_name == "pH<sub>CaCl2</sub>" ~ "soil_ph")) |>
+  mutate(source = 'Table 1')
+
+Table1Meta <- Table1Primary |>
+  select(column_name, of_variable) |>
+  unique() |>
+  mutate(unit = str_extract(column_name, pattern = '(?<=\\().*(?=\\))'),
+         source = 'Table 1 column names.') |>
+   filter(!is.na(unit)) |>
+   select(-column_name) |>
+   bind_rows(
+  tribble(~of_variable, ~method, ~source,
+          'soil_ph', paste0(data.lev0.ls$method[25:26], collapse = ' '), 'Methods ln25-26',
+          'soil_carbon', paste0(data.lev0.ls$method[29:30], collapse = ' '), 'Methods ln29-30',
+          'soil_nitrogen', paste0(data.lev0.ls$method[29:30], collapse = ' '), 'Methods ln29-30',
+          'soil_depth', paste0(data.lev0.ls$method[20], collapse = ' '), 'Methods ln20',
+ ) ) |>
+  
+  # Pull everything together into by stacking the meta and primary data tables
+data.lvl1.ls <- list(
+  meta = bind_rows(studyMeta, Table1Meta),
+  primary = bind_rows(Table1Primary)|>
+    mutate(elevation_id = with_entry[of_variable == 'elevation'],
+           is_type = 'value',
+           .by = row_id) |>
+    arrange(row_id, elevation_id, column_name,
+            of_variable, is_type, with_entry, source)
+  )
+#View(data.lvl1.ls)
 ```
