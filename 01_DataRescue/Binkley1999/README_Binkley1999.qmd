@@ -52,6 +52,7 @@ author:
 library(tidyverse)
 library(kableExtra)
 library(bibtex)
+library(formula.tools)
 
 methods.file <- 'Binkley1999_Methods.md'
 table1.file <- 'Binkley1999_Table1.csv'
@@ -219,6 +220,9 @@ The `of_variable` being used here are:
 + inital_planting
 + observation_year
 + core_description
++ soil_ph
++ sample_prep
+
 
 ```{r}
 
@@ -232,12 +236,13 @@ studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~source,
                     'soil_class', 'value', 'Kaiwiki thixotropic, isothermic Typic Hydrandepts', paste('Method ln4:',paste(data.lvl0.df$method[4], collapse = ' ')),
                    'inital_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
                   'observation_year', 'value', '1997', paste('Method ln23:', data.lvl0.df$method[23]),
-                  'sample_prep', 'oven dried at 100 C to constant weight', paste('Method ln22':data.lvl0.df$method[22]),
+                  'sample_prep', 'value', 'oven dried at 100 C to constant weight', paste('Method ln22:', data.lvl0.df$method[22]),
                   'core_description', 'value', '30 by 30 m plots with trees at two spacings (1 by 1 m and 3 by 3 m)', paste('Method ln12:', data.lvl0.df$method[12]),
                    'citation', 'value', format(data.lvl0.df$citation$primary), 'journal citation',
                    'doi', 'value', data.lvl0.df$citation$primary$doi, 'journal citation')
+
                   
-Table1Primary <- data.lvl0.ls$data$Table1$primary |>
+Table1Primary <- data.lvl0.df$data$Table1$primary |>
    mutate(row_id = paste0('R', 1:n())) |>
     pivot_longer(cols = -row_id,
                names_to = 'column_name', values_to = 'with_entry',
@@ -249,6 +254,7 @@ Table1Primary <- data.lvl0.ls$data$Table1$primary |>
          column_name == "pH<sub>CaCl2</sub>" ~ "soil_ph")) |>
   mutate(source = 'Table 1')
 
+###Hitting errors with stuff below (function called RHS); tried to install formula.tools packages but that didn't work.
 Table1Meta <- Table1Primary |>
   select(column_name, of_variable) |>
   unique() |>
@@ -275,4 +281,5 @@ data.lvl1.ls <- list(
             of_variable, is_type, with_entry, source)
   )
 #View(data.lvl1.ls)
+---->
 ```
