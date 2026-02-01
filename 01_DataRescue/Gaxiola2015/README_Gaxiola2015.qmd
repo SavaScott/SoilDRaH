@@ -154,20 +154,20 @@ These files are in the @Gaxiola2015 data rescue.
 ## Data Rescue Plan
 
 + Lead
-  - [ ] Read the article or data resource and the discription of the target project
-  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Gaxiola2015'
-  - [ ] Create a copy of this template folder and rename it to Gaxiola2015
-  - [ ] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
-  - [ ] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
-  - [ ] Add the reviewer to the author list in the yml
+  - [x] Read the article or data resource and the discription of the target project
+  - [x] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Gaxiola2015'
+  - [x] Create a copy of this template folder and rename it to Gaxiola2015
+  - [x] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
+  - [x] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
+  - [x] Add the reviewer to the author list in the yml
 + Do
   - [ ] Create a spreadsheet with TableN and export it to csv
   - [ ] Extract points from FigureM and export it to csv
-  - [ ] Transcribe or copy the method section
-  - [ ] Insert references to bib entries
-  - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
-  - [ ] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - [ ] Create a bib file with the citations from the methods section
+  - [x] Transcribe or copy the method section
+  - [x] Insert references to bib entries
+  - [x] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+  - [x] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - [x] Create a bib file with the citations from the methods section
   - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
   - [ ] cross check with second transcriber for tables and methods, and resolve any differences
@@ -224,6 +224,40 @@ Think of this as a lab notebook documenting how you found each citation.
 - [ ] short citation
   + copy from bib
   + manually entered or direct export
+
+- [x] López-Cortés, F., and López, D. (2004). “Antecedentes bioclimáticos del Parque Nacional Bosque Fray Jorge,” in Historia natural del Parque Nacional Bosque Fray Jorge, eds F. A. Squeo, J. R. Gutiérrez, and I. R. Hernández (La Serena: Ediciones Universidad de La Serena), 45–50.
+  + copy from bib
+
+- [x] Gutiérrez, J. R., Meserve, P. L., Kelt, D. A., Engilis, A. Jr., Previtali, M. A., Milstead, W. B.,et al. (2010). Long-term research in Bosque Fray Jorge National Park: twenty years studying the role of biotic and abiotic factors in a Chilean semiarid scrubland. Rev. Chil. Hist. Nat. 83, 69–98. doi: 10.4067/s0716-078x2010000100005
+  + copy from bib
+
+- [x] Jiménez, M. A., Jaksic, F. M., Armesto, J. J., Gaxiola, A., Meserve, P. L., Kelt, D. A.,et al. (2011). Extreme climatic events change the dynamics and invasibility of semi-arid annual plant communities. Ecol. Lett. 14, 227–1235. doi: 10.1111/j.1461-0248.2011.01693.x
+  + copy from bib
+
+- [x] Gutiérrez, J. R., Meserve, P. L., Contreras, L. C., Vásquez, H., and Jaksic, F. M. (1993). Spatial distribution of soil nutrients and ephemeral plants underneath and outside the canopy of Porlieria chilensis shrubs (Zygophyllaceae) in arid coastal Chile. Oecologia 95, 347–352. doi: 10.1007/BF00320987
+  + copy from bib
+  
+- [x] Cornwell, W. K., Cornelissen, J. H. C., Amatangelo, K., Dorrepaal, E., Eviner, V. T., Godoy, O.,et al. (2008). Plant species traits are the predominant control on litter decomposition rates within biomes worldwide. Ecol. Lett. 11, 1065–1071. doi: 10.1111/j.1461-0248.2008.01219.x
+  + copy from bib
+
+- [x] Van Soest, P. J. (1963). Use of detergents in the analysis of fibrous feeds II. A rapid method for the determination of fiber and lignin. J. Assoc. Off. Anal. Chem. 49, 546–551.
+  + copy from bib
+
+- [x] Killingbeck, K. T. (1996). Nutrients in senesced leaves: keys to the search for potential resorption and resorption proficiency. Ecology 77, 1716–1727. doi: 10.2307/2265777
+  + copy from bib
+
+- [x] Moorhead, D. L., and Reynolds, J. F. (1991). A general model of litter decomposition in the northern Chihuahuan Desert. Ecol. Modell. 56, 197–219. doi: 10.1016/0304-3800(91)90200-K
+  + copy from bib
+
+- [x] Barnes, P. W., Throop, H. L., Hewins, D. B., Abbene, M. L., and Archer, S. R. (2012). Soil coverage reduces photodegradation and promotes the development of soil-microbial films on dryland leaf litter. Ecosystems 15, 311–321. doi: 10.1007/s10021-011-9511-1
+  + copy from bib
+
+- [x] Crawley, M. J. (2002). Statistical Computing—an Introduction to Data Analysis Using S-PLUS. Chichester: Wiley, 740.
+  + copy from bib
+
+- [x] R Development Core Team. (2011). R: A Language and Environment for Statistical Computing R Foundation for Statistical Computing ISBN: 3-900051-07-0. Available at: http://www.R-project.org/ [accessed September 6, 2011].
+  + copy from bib
+
 ---->
 
 # Level 0 Data rescue
