@@ -1,6 +1,6 @@
-# Materials and Methods
+# **Materials and Methods**
 
-## Study Site and Plant Species
+## **Study Site and Plant Species**
 
 Our study was conducted in the scrublands of Fray Jorge Forest National Park (30° S, 71° 40′ W), Chile.
 The local climate is Mediterranean semiarid [@Lopez-Cortes2004], with extremely dry periods extending for 6–7 months (November–April) without rain, followed by humid winters (May–August) when >95% of the rain falls.
@@ -20,7 +20,7 @@ We compared litter degradation in these two species not only because these domin
 Leaf litter tends to accumulate under the crown foliage, which is absent during summer in the case of *Proustia*.
 Hence leaves of *Proustia* are exposed to full sun for during the dry season.
 
-## Collection of Plant Material
+## **Collection of Plant Material**
 
 We collected green leaves and litter from 20 randomly selected adults of each shrub species within an area of about 3 hectares.
 At least 10 g of green mature foliage and at least 20 g (dry weight) of recently fallen dead leaves were collected from under each individual.
@@ -36,7 +36,7 @@ A total of 14 samples of dried green and dead leaves per species were ground to 
 Lignin content was determined following @VanSoest1963, using one gram of ground litter milled to 1-mm mesh size for acid detergent fiber (ADF).
 Litter-N concentrations were interpreted as resorption proficiency (*sensu* @Killingbeck1996) after we corrected for changes in LMA, to control for senescence-related differences in leaf carbon.
 
-## Photodecomposition Field Experiment
+## **Photodecomposition Field Experiment**
 
 To assess the effects of natural UV exposure on litter biomass loss for the two shrub species, we established a photodecomposition experiment in the field.
 The experiment lasted 5 months (December through April), including the entire rainless summer period in semiarid Chile.
@@ -66,7 +66,7 @@ Biomass loss % = ((initial weight – final weight) /initial weight)∗100.
 Every month during the field experiment we monitored temperatures inside 10–15 litterbags per treatment, five times in 1 day, by sticking a mini *k*-thermocouple probe inside the bags.
 The thermocouple was connected to a SM320 datalogger (Dickson Addison, USA).
 
-## Laboratory decomposition experiment
+## **Laboratory decomposition experiment**
 
 To test the predictions about the combined effects of photodecomposition and soil moisture on litter decay, we conducted a follow-up decomposition experiment in the laboratory.
 For this experiment we used litter subsamples taken from the UV- or UV+ litterbags from the photodecomposition experiment.
@@ -77,7 +77,8 @@ In August–September the total of 132 leaf litter mesh bags (2 species × 2 UV 
 Litter samples were assigned one of the three water treatments that simulated actual ranges of annual rainfall recorded over the past 25 years in the study area: (1) low rainfall or “dry year” (water addition equivalent to 15 mm of rain), (2) average or “normal year” (equivalent to 140 mm), and (3) high rainfall or “wet year” (equivalent to c. 250 mm).
 The latter amount resembles the rainfall of an El Niño event.
 According to the 25-years instrumental rainfall records for the study site, in dry years an average rainfall event is about 0.2 ± 0.1 mm per day (or ∼0.02 ml cm$^{-2}$); for an average year, average daily pulses are 1.1 ± 0.3 mm (or ∼0.11 ml cm$^{-2}$), and can last 3–6 h; and finally, average pulses on wet years are 2.5 ± 0.4 mm (or ∼0.25 ml cm$^{-2}$) spread over 10–15 h [@GaxiolaUnpublished].
-Based on this information we established the amount and frequency of water pulses for each water treatment. Water treatments were provided in ml cm$^{-2}$, as 0.1 ml cm$^{-2}$ is equivalent to 1 mm of rainfall.
+Based on this information we established the amount and frequency of water pulses for each water treatment.
+Water treatments were provided in ml cm$^{-2}$, as 0.1 ml cm$^{-2}$ is equivalent to 1 mm of rainfall.
 For the low rainfall treatment, and considering the size of the plastic trays (i.e., 15 × 15 cm) we added pulses of 0.02 ml cm$^{-2}$.
 The equivalent of 15 mm of rain was added after 75 pulses over 2 months.
 For this treatment we used a pipette.
@@ -86,13 +87,13 @@ To simulate the condition of a wet El Niño year, we added pulses ranging from 0
 For the last two treatments we used trigger water sprayers of different sizes to control the water volume reaching the bags.
 Water pulses were randomly distributed over the first 4 months of the experiment, with 80% of the pulses concentrated in the second and third months, as climatic measurements in our study site show that rains are greatest in June and July (80% of rainfall).
 
-Every 20 days we shuﬄed litterbags to reduce effects of position along benches.
+Every 20 days we shuffled litterbags to reduce effects of position along benches.
 Six months later, litter samples were oven-dried at 60° C until constant mass.
 Biomass loss was monitored over 6 months since the experiment was initiated in the laboratory.
 Litter decomposition was estimated as the percentage of remaining biomass.
 Remaining biomass % = (final weight/initial weight)∗100.
 
-## Data Analyses
+## **Data Analyses**
 
 To assess inter-specific differences in foliar traits for green leaves and leaf litter before and after the photodecomposition experiment, we used pairwise comparisons based on Welch two sample *t*-tests.
 Effects of differential exposure to natural UV radiation on litter biomass loss were tested using a two-way analysis of variance (ANOVA; @Crawley2002), with species and UV-treatments as factors.
