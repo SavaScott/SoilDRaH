@@ -127,7 +127,6 @@ We are focusing on datasets that are not in [Aridec](https://essd.copernicus.org
 | AuthorYYYY | citation | Data Rescue - GitHub Issue | lead point of contact|
 |------------|----------|-----------|----------|
 | Lin2015 | \@Lin2015 | [185](https://github.com/ktoddbrown/SoilDRaH/issues/185) | SavaScott |
-<!---- remove and replace the example above ---->
 
 ## Imported to bib
 

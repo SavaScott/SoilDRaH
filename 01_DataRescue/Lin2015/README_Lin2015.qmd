@@ -173,20 +173,20 @@ These files are in the Lin2015 data rescue.
 ## Data Rescue Plan
 
 + Lead
-  - [ ] Read the article or data resource and the discription of the target project
-  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Lin2015'
-  - [ ] Create a copy of this template folder and rename it to Lin2015
-  - [ ] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
-  - [ ] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
-  - [ ] Add the reviewer to the author list in the yml
+  - [x] Read the article or data resource and the discription of the target project
+  - [x] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Lin2015'
+  - [x] Create a copy of this template folder and rename it to Lin2015
+  - [x] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
+  - [x] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
+  - [x] Add the reviewer to the author list in the yml
 + Do
   - [ ] Create a spreadsheet with TableN and export it to csv
   - [ ] Extract points from FigureM and export it to csv
-  - [ ] Transcribe or copy the method section
-  - [ ] Insert references to bib entries
-  - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
-  - [ ] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
-  - [ ] Create a bib file with the citations from the methods section
+  - [x] Transcribe or copy the method section
+  - [x] Insert references to bib entries
+  - [x] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+  - [x] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - [x] Create a bib file with the citations from the methods section
   - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
   - [ ] cross check with second transcriber for tables and methods, and resolve any differences
@@ -243,6 +243,25 @@ Think of this as a lab notebook documenting how you found each citation.
 - [ ] short citation
   + copy from bib
   + manually entered or direct export
+  
+- [x] Lin Y, King J (2014) Effects of UV exposure and litter position on decomposition in a California grassland. Ecosystems 17:158–168
+  + copy from bib
+
+- [x] Van Soest PJ (1963) Use of detergents in the analyses of fibrous feeds. A rapid method for the determination of fiber and lignin. J Assoc Off Anal Chem 46:829–835
+  + copy from bib
+  
+- [x] Austin AT, Vivanco L (2006) Plant litter decomposition in a semi-arid ecosystem controlled by photodegradation. Nature 442:555–558
+  + copy from bib
+  
+- [x] Brandt LA, King JY, Hobbie SE, Milchunas DG, Sinsabaugh RL (2010) The role of photodegradation in surface litter decomposition across a grassland ecosystem precipitation gradient. Ecosystems 13:765–781
+  + copy from bib
+  
+- [x] Rozema J, Tosserams M, Nelissen HJM, van Heerwaarden L, Broekman RA, Flierman N (1997) Stratospheric ozone reduction and ecosystem processes: enhanced UV-B radiation affects chemical quality and decomposition of leaves of the dune grassland species Calamagrostis. Plant Ecol 128:285–294
+  + copy from bib
+
+- [x] von Lützow M, Kögel-Knabner I, Ekschmitt K, Flessa H, Guggenberger G, Matzner E, Marschner B (2007) SOM fractionation methods: relevance to functional pools and to stabilization mechanisms. Soil Biol Biochem 39:2183–2207
+  + copy from bib
+
 ---->
 
 # Level 0 Data rescue
