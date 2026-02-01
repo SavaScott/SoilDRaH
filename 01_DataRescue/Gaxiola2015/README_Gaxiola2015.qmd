@@ -1,0 +1,293 @@
+---
+title: "Data Rescue: Gaxiola 2015"
+format:
+  html:
+    toc: true
+    eval: false #default to not evaluating the chunks, override this the template is completed
+date: last-modified
+date-format: YYYY-MMMM
+bibliography:
+  - Gaxiola2015_Methods.bib #contains the citations in the methods section
+  - Gaxiola2015.bib #contains citation for the data source, generally a single citation of the primary paper
+authors: #author scheme from https://quarto.org/docs/journals/authors.html
+  - id: ktoddbrown #use the github name as an id
+    name:
+      given: Katherine
+      family: Todd-Brown
+    orcid: 0000-0002-3109-8130
+    affiliation:
+      - ref: uf-ees
+    role: #TODO define these roles and add reference
+      - transcription: review
+   #   - standardization: lead #review
+  #    - curation: lead #review
+
+  - id: SavaScott #use the github name as an id
+    name:
+      given: Savannah
+      family: Scott
+    affiliation:
+      - ref: uf-ees
+    role: #TODO define these roles and add reference
+      - transcription: lead
+   #   - standardization: lead #review
+  #    - curation: lead #review
+
+
+
+affiliations:
+  - id: uf-ees
+    name: University of Florida
+    department: Environmental Engineering Sciences
+    city: Gainesville
+    state: Florida
+    country: USA
+    address: "365 Weil Hall \nP.O. Box 116580"
+    postal-code: 32611
+    url: https://essie.ufl.edu/ees/
+    
+timelog:
+  - activity: 
+      description: Lead Transcription and ReadMe Update
+      who: SavaScott #github username
+      #when you started and ended, can be just a year or down to the minute
+      start: 2025-01-31
+      #end: YYYY-MM-DD
+      #alternatively duration can be combined with a being/end
+      duration: P45M
+
+  - activity: 
+      description: Secondary Transcription
+      who: ktoddbrown #github username
+      #when you started and ended, can be just a year or down to the minute
+      end: 2025-11-26
+      #start: YYYY-MM-DD THH:MM
+      #alternatively duration can be combined with a being/end
+      duration: P30M
+---
+
+
+```{r}
+#| label: setup
+#| include: true
+#| warning: false
+#| message: false
+#| echo: false
+
+
+library(tidyverse) # data processing
+library(kableExtra) # pretty tables
+library(bibtex) # reading in BibTex files to R
+
+# data files for level 0
+methods.file <- "Gaxiola2015_Methods.md"
+tableN.file <- 'Gaxiola2015_TableN.csv'
+figureM.file <- 'Gaxiola2015_FigureM.csv'
+
+# Bibliograph files
+primaryCitation.file <- 'Gaxiola2015.bib'
+methodsCitation.file <- 'Gaxiola2015_Methods.bib'
+
+# read function; you will need to create this function after you have your data
+#... rescue reviewed and before you finish your data harmonization.
+readsource.file <- '../../../R/readGaxiola2015.R'
+if(file.exists(readsource.file)){
+  source(readsource.file)
+}
+
+#semantic files for level 1
+of_variable.file <- '../../semantics/SoilDRaHVocabulary_of_variable.csv'
+is_type.file <- '../../semantics/SoilDRaHVocabulary_is_type.csv'
+
+```
+
+
+# Data Summary
+
+
+> Gaxiola, A., & Armesto, J. J. (2015). Understanding litter decomposition in semiarid ecosystems: linking leaf traits, UV exposure and rainfall variability. Frontiers in Plant Science, 6, 140. https://doi.org/10.3389/fpls.2015.00140
+
+For the discussion of this data rescue see the Github issue: https://github.com/ktoddbrown/SoilDRaH/issues/187.
+
+This paper looks at the scrublands of Fray Jorge Forest National Park in Chile, which experience extremely high levels of UV radiation. They focused on two different shrub species, *Porlieria chilensis* and *Proustia pungens*, with differing leaf habits, which result in differences in LMA, lignin content, and foliar nitrogen and carbon content. Different green leaf traits could lead to differences in the decay rates. While they noted that the high UV radiation reduced litter biomass, there was higher biomass loss in the *Proustia* litter.
+
+## Tables and figures
+
+
+- Table 
+  1) Table 1. Comparisons of leaf litter traits between Proustia and Porlieria following 5 months of photodecomposition in the field.
+
+- Figure 
+  1) Figure 1. Effects of UV exposure on litter biomass after a 5-months experiment in semiarid Chile.
+  2) Figure 2. Remaining litter biomass (%) at the end of a 6-month decomposition experiment, preceded by photodegradation in the field.
+  3) Figure 3. Graphic representation of carry-over effects of photodecomposition on litter biomass losses (%) as a function of water availability for two shrub species with contrasting leaf traits.
+
+## Fit for purpose: DeAD
+
+This data is identified as a data source for DeAD
+The Decomposition Across Drylands (DeAD) data collection is a new data effort targeting dryland decomposition studies.
+The purpose of this data collection is to develop better litter decay models for dryland ecosystems. 
+
+- Location: This study was conducted in the scrublands of Fray Jorge forest National Park, Chile. The coordinates provided in the subsection "Study Site and Plant Species" are 30° S, 71° 40′ W.
+- Duration: This study was conducted over 5 months, from December to April, including the rainless summer period of the semiarid climate.
+- Mass loss: The effects of the UV exposure on the shrubs' litter biomass are in Table and Figure 1.
+- Solar Exposure: The study used UV-blocking and UV-passing sheets to test the effects of the UV radiation on the litter. The transmitting film allowed >95% of the UV-waveband through. More in-depth information is provided in the subsection "Photodecomposition Field Experiment".
+  
+## Files
+
+
+These files are in the @Gaxiola2015 data rescue.
+
+- [Readme](README_Gaxiola2015.qmd)
+  + This is the primary file that documents the transcriptions and decision made during data rescue.
+- [Gaxiola2015.bib](Gaxiola2015.bib)
+  + citation for article transcribed
+- [Gaxiola2015_Methods.bib](Gaxiola2015_Methods.bib)
+  + citations for the methods section of the article
+- [Gaxiola2015_Methods.md](Gaxiola2015_Methods.md)
+  + methods transcribed from primary article
+- [Gaxiola2015_TableN.csv](Gaxiola2015_TableN.csv)
+  + table N from primary article with ...
+
+# Data Rescue working notes 
+
+## Data Rescue Plan
+
++ Lead
+  - [ ] Read the article or data resource and the discription of the target project
+  - [ ] Create a fresh fork of the primary repository https://github.com/ktoddbrown/SoilDRaH/tree/main, it might be useful to rename it 'SoilDRaH_Gaxiola2015'
+  - [ ] Create a copy of this template folder and rename it to Gaxiola2015
+  - [ ] Fill out Data summary section (except for the Files), the Data Rescue Plan (here!), and update the author section of the yml to reflect who is working on the rescue
+  - [ ] Create a GitHub issue from the Data Rescue template and get feedback from a reviewer on the project (Dr Todd-Brown or a grad student typically).
+  - [ ] Add the reviewer to the author list in the yml
++ Do
+  - [ ] Create a spreadsheet with TableN and export it to csv
+  - [ ] Extract points from FigureM and export it to csv
+  - [ ] Transcribe or copy the method section
+  - [ ] Insert references to bib entries
+  - [ ] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+  - [ ] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
+  - [ ] Create a bib file with the citations from the methods section
+  - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
++ Measure
+  - [ ] cross check with second transcriber for tables and methods, and resolve any differences
+  - [ ] compile ReadMe with all chunks up through the Level 0 data rescue section with `eval: true`
+  - [ ] push to your local fork and create a pull request to the main branch of the primary repository
+  - [ ] address any revisions suggested in your pull request review
+  - [ ] celebrate!
+
+## Table N
+
+<!--- Common table modifications include: inserting an extra column to pivot sub-headers, filling in NA to identify blanks, and adding Latex or Markdown to denote formatting.---->
+
+Table N was modified ....
+
+```{r}
+#| label: table1Check
+#| eval: false #remove when you have the file transcribed
+
+
+read_csv(file = tableN.file, #read in the specific file
+         skip = 1, #skip the first line with the caption
+         #read everything as a character, don't worry about formatting yet
+         col_types = cols(.default = col_character())) |>
+  kable(caption = read_csv(file = tableN.file, #read in that file again but...
+                           n_max = 1, #only read the first line
+                           col_names = 'caption', #call it the caption
+                           #read everything as a character
+                           col_types = cols(.default = col_character()),
+                           show_col_types = FALSE #do not return messages
+                           )$caption #and take it out of the table
+  )
+```
+
+## Methods
+
+```{bash}
+#| label: compareTranscriptions
+#| eval: false
+# You will want to repeat the line below to cross check each csv and md file in the
+#... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
+diff --strip-trailing-cr --suppress-common-lines -y temp/Gaxiola2015_Methods_ABC.md Gaxiola2015_Methods_BCD.md
+```
+
+{{< include Gaxiola2015_Methods.md >}}
+
+<!----
+## Citation notes from Methods
+
+Below are the citation notes from the methods section.
+This generally doesn't read well in the final report so commenting it out here but it is very useful for tracking citations when you are doing the transcriptions.
+Some citations are missing, those are noted here and how best guess were generated.
+Think of this as a lab notebook documenting how you found each citation.
+
+- [ ] short citation
+  + copy from bib
+  + manually entered or direct export
+---->
+
+# Level 0 Data rescue
+
+This level 0 data read parses the transcribed files with minimal cleaning or transformations.
+
+```{r}
+#| label: readLevel0
+#This chunk has two purposes. 
+#...1) Check the formatting by reading in everything 
+#...2) Create a list of everything to process later in level 1
+
+data.lvl0.ls <- list(
+  #Read in a list of all the bib files
+  citation = list(
+    #Citation for the article transcriptions are pulled from
+    primary = read.bib(file = primaryCitation.file), 
+    #Citations for all referenced articles
+    methods = read.bib(file = methodsCitation.file)
+  ),
+  #Read in the text transcription of the article's methods section
+  method = read_lines(file = methods.file),
+  #Read in the results as tables or figure transcriptions. This includes
+  #...the caption as well as the tables themselves
+  data = list(
+    Table1 = list(
+      #Read the caption as a text string. Captions are the first cell on 
+      #...the first row.
+      caption = read_csv(file = tableN.file,
+                         col_types = cols(.default = col_character()),
+                         n_max = 1, col_names = FALSE)$X1[1],
+      #Read in all the data, skipping the first row with the caption and read
+      #...in the table as character. This element is a tibble (data.frame).
+      primary = read_csv(file = tableN.file,
+                         col_types = cols(.default = col_character()),
+                         skip = 1)
+    ) #End 'Table1' element
+    #Repeat for all tables and figures...
+   ) #end 'data' element
+)
+
+```
+
+The code is also in `readsource.file` and returned with the `dataLevel = 'level0'` argument.
+Below verifies that the data from the function matches what is coded above.
+
+```{r}
+#| label: checkReadFunction_lvl0
+if(file.exists(readsource.file)){
+  datafunction.lvl0.ls <- readGaxiola2015(dataDir = '.',
+                                         dataLevel = 'level0')
+  
+  if(isTRUE(all.equal(datafunction.lvl0.ls, data.lvl0.ls))){
+    print('Read function matches code here.')
+  }else{
+    print('There is a mismatch in the data objects between the code here and the read function.')
+  }
+}else{
+  print('The read function does not exist.')
+}
+```
+
+
+# References
+
+<!---- This space will be filled with the citations when rendered. Leave this blank. ---->
+

@@ -10,7 +10,7 @@ For example, 1991–1992 and 1997 have been identified as El Niño years with an
 In contrast, years 1988 and 1990 were extremely dry, with an annual rainfall of 11 and 33 mm respectively, and associated with the negative phase of ENSO, or La Niña years [@Gutierrez2010; @Jimenez2011].
 Regarding the focal driver of our study, UV radiation can be extremely high in this area of northern Chile, particularly during the cloudless summer months.
 According to the Direccion Meteorológica de Chile (DMC; http://www.meteochile.gob.cl/radiacion_uv.php) the UV index for our study site can be higher than 11 at midday during summer months.
-Similarly, we measured UV radiation in our study site with broadband UV sensors calibrated for 280–320 nm (SU-100, Apogee Instruments Inc., Logan, UT, USA) and recorded unweighted UV mean values of 55 Wm$^{-2}$ during January with an absolute maximum of 62.4 Wm$^{-2}$ [@Unpublished].
+Similarly, we measured UV radiation in our study site with broadband UV sensors calibrated for 280–320 nm (SU-100, Apogee Instruments Inc., Logan, UT, USA) and recorded unweighted UV mean values of 55 Wm$^{-2}$ during January with an absolute maximum of 62.4 Wm$^{-2}$ [@UnpublishedNA].
 
 Predominant vegetation of the study area is a mixed scrubland characterized by the dominance of evergreen and summer-deciduous shrubs, 1–3 m in height, with a seasonal ground layer of annual species.
 The thorny evergreen shrub *Porlieria chilensis* IM Johnst. (Zygophyllaceae) dominates the overstory layer with 25–35% cover, along with two deciduous species, *Proustia pungens* D. Don (Asteraceae; 10–20% cover), and *Adesmia bedwellii* Skottsb (Leguminosae; 3–6% cover), leaving ample open spaces between shrubs [@Gutierrez1993].
@@ -34,7 +34,7 @@ Leaves were weighed after drying at 65° C for 2 days (or until constant weight)
 Data on leaf mass and area for each species were used to calculate LMA.
 A total of 14 samples of dried green and dead leaves per species were ground to determine total C and N concentrations by flash combustion using a NA2500 Carlo Erba Element Analyzer.
 Lignin content was determined following @VanSoest1963, using one gram of ground litter milled to 1-mm mesh size for acid detergent fiber (ADF).
-Litter-N concentrations were interpreted as resorption proficiency [@sensuKillingbeck1996] after we corrected for changes in LMA, to control for senescence-related differences in leaf carbon.
+Litter-N concentrations were interpreted as resorption proficiency (*sensu* @Killingbeck1996) after we corrected for changes in LMA, to control for senescence-related differences in leaf carbon.
 
 ## Photodecomposition Field Experiment
 
