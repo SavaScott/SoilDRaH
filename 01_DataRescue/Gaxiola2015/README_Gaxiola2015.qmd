@@ -168,7 +168,7 @@ These files are in the @Gaxiola2015 data rescue.
   - [x] reformat equations and mathematical symbols as [LaTex](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
   - [x] reformat text using [Markdown](https://www.markdownguide.org/cheat-sheet/)
   - [x] Create a bib file with the citations from the methods section
-  - [ ] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
+  - [x] Push to your local fork and get a second transcription pushed to your local fork by someone else on the project
 + Measure
   - [ ] cross check with second transcriber for tables and methods, and resolve any differences
   - [ ] compile ReadMe with all chunks up through the Level 0 data rescue section with `eval: true`
