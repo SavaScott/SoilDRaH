@@ -91,6 +91,7 @@ library(bibtex) # reading in BibTex files to R
 methods.file <- "Lin2015_Methods.md"
 table1.file <- 'Lin2015_Table1.csv'
 table2.file <- 'Lin2015_Table2.csv'
+figure1.file <- 'Lin2015_Figure1.csv'
 
 # Bibliograph files
 primaryCitation.file <- 'Lin2015.bib'
@@ -239,7 +240,52 @@ read_csv(file = table2.file, #read in the specific file
                            )$caption #and take it out of the table
   )
 ```
+## Figure 1
 
+Figure 1 was modified to add an x-axis label of exposure period. It was also adjusted in the csv to only mark one of UV treatment of having 'P < 0.05' to better fit the coding process. 
+
+```{r}
+
+fig1Caption <- read_csv(file = figure1.file, 
+                                 n_max = 1, col_names = 'caption', 
+                                 show_col_types = FALSE)$caption
+fig1Data <- read_csv(file = figure1.file,
+                   skip = 1,
+                                      col_types = cols(.default = col_character()))
+
+fig1Data$`x axis label` <- factor(fig1Data$`x axis label`,
+      levels = c("Summer", "Summer-winter", "One year"))
+
+fig1Data$y <- as.numeric(fig1Data$y)
+fig1Data$`y value positive SE` <- as.numeric(fig1Data$`y value positive SE`)
+
+fig1Data$signif_label <- ifelse(grepl("<\\s*0\\.05", fig1Data$`P value`),
+"**",
+""
+) 
+
+ggplot(fig1Data, aes(x = `x axis label`, y = y, fill = `UV treatment`)) + 
+  geom_bar(stat = "identity", position = position_dodge(width = 1)) + 
+  scale_y_continuous(breaks = c(0, 20, 40, 60, 80)) +
+  scale_fill_manual(
+    values = c("UV block" = "black",
+               "UV pass" = "darkgray")) +
+  geom_errorbar(aes(ymin = y, ymax = `y value positive SE`,group = `UV treatment`),
+                position = position_dodge(width = 1), 
+                width = 0.25) +
+  geom_text(aes(
+    label = signif_label,
+    y = `y value positive SE` + 10,
+    group = 'UV treatment'),
+    position = position_dodge(width = 1),
+    vjust = 0,
+    size = 5
+  ) +
+  labs(title = "Fig. 1 Effect of UV manipulation and exposure periods",
+     y = unique(fig1Data$`y axis label`),
+     x = "Exposure period")
+
+```
 
 ## Methods
 
