@@ -1,6 +1,6 @@
 # Materials and methods
 
-## Litter collection and UV treatment
+## Litter collection and UV treatments
 
 Litter samples of *B. diandrus* were collected from the University of California’s Sedgwick Reserve in Santa Ynez, California, USA (43°42′N, 120°2′W; 25 km north of Santa Barbara).
 A detailed description of the site can be found in @Lin2014.
@@ -9,7 +9,7 @@ Annual grasses typically fully senesce by late April.
 Senesced litter lying across the ground surface forms a litter layer of 5 to 15 cm thickness, the surface of which is exposed to intensive solar radiation during the dry season from May to September.
 To manipulate UV radiation (280–400 nm) received by litter samples, 20 pairs of steel frames (l×w×h: 75×150×25 cm) were constructed with plastic louvers that either block or pass UV radiation.
 A subset of the screens were used in @Lin2014, which reported the technical details of these screens, including dimensions, placement, optical properties, and effects on air temperature and relative humidity.
-In short, the "UV block" screens eliminated 93 and 85% of UV-A (315–400 nm) and UV-B (280–315 nm) radiation, respectively, whereas the "BUV pass" screens transmitted 80 and 79% of UV-A and UV-B radiation, respectively.
+In short, the "UV block" screens eliminated 93 and 85% of UV-A (315–400 nm) and UV-B (280–315 nm) radiation, respectively, whereas the "UV pass" screens transmitted 80 and 79% of UV-A and UV-B radiation, respectively.
 Screens allowed penetration of rainfall and controlled for heating by having a louvered design.
 There was no difference between UV block and UV pass screens in their effects on photosynthetically active radiation (PAR), air temperature, or relative humidity.
 
