@@ -33,6 +33,16 @@ authors: #author scheme from https://quarto.org/docs/journals/authors.html
    #   - standardization: lead #review
   #    - curation: lead #review
 
+  - id: laylakalandjian #use the github name as an id
+    name:
+      given: Layla
+      family: Kalandjian
+    affiliation:
+      - ref: uf-ees
+    role:
+      - transcription: secondary
+   #   - standardization: lead #review
+  #    - curation: lead #review
 
 
 affiliations:
@@ -49,20 +59,16 @@ affiliations:
 timelog:
   - activity: 
       description: Lead Transcription and ReadMe Update
-      who: SavaScott #github username
-      #when you started and ended, can be just a year or down to the minute
+      who: SavaScott
       start: 2025-01-31
       #end: YYYY-MM-DD
-      #alternatively duration can be combined with a being/end
       duration: P45M
 
   - activity: 
       description: Secondary Transcription
-      who: ktoddbrown #github username
-      #when you started and ended, can be just a year or down to the minute
+      who: laylakalandjian
       end: 2025-11-26
       #start: YYYY-MM-DD THH:MM
-      #alternatively duration can be combined with a being/end
       duration: P30M
 ---
 
@@ -115,7 +121,7 @@ This paper looks at the scrublands of Fray Jorge Forest National Park in Chile, 
 
 
 - Table 
-  1) Table 1. Comparisons of leaf litter traits between Proustia and Porlieria following 5 months of photodecomposition in the field.
+  1) Table 1. Comparisons of leaf litter traits between *Proustia* and *Porlieria* following 5 months of photodecomposition in the field.
 
 - Figure 
   1) Figure 1. Effects of UV exposure on litter biomass after a 5-months experiment in semiarid Chile.
