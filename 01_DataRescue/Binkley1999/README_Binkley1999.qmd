@@ -300,5 +300,48 @@ Table1Primary <- data.lvl0.df$data$Table1$primary |>
       column_name == "Al (mmol m<sup>-2</sup>)" ~ "soil_aluminum_stock")  )|>
    mutate(from_source = 'Table 1')
 
+Table1Meta <- Table1Primary |>
+  select(column_name, of_variable) |>
+  unique() |>
+  #Grab everything between the parentheses as units and attribute the source as the column names.
+  mutate(unit = str_extract(column_name, pattern = '(?<=\\().*(?=\\))'),
+         from_source = 'Table 1 column names.') |>
+  #If there aren't units then drop the row
+  filter(!is.na(unit)) |>
+  #Don't keep the column name now that you have the units, cross link via the variable
+  select(-column_name) |>
+  
+   bind_rows(
+  tribble(~of_variable, ~method, ~from_source,
+          'soil_pH_calcium_chloride', paste0(data.lvl0.df$method[25:26], collapse = ' '), 'Methods ln25-26',
+          'soil_calcium_stock', paste0(data.lvl0.df$method[27], collapse = ' '), 'Methods ln27',
+          'soil_magensium_stock', paste0(data.lvl0.df$method[27], collapse = ' '), 'Methods ln27',
+          'soil_aluminum_stock', paste0(data.lvl0.df$method[27], collapse = ' '), 'Methods ln27',
+          'control_potassium_stock', paste0(data.lvl0.df$method[c(14:15,27)], collapse = ' '), 'Methods ln14-15;27',
+  'fertilized_potassium_stock', paste0(data.lvl0.df$method[c(16:17,27)], collapse = ' '), 'Methods ln16-17;27',
+  'plant_age', paste0(data.lvl0.df$method[11], collapse = ' '), 'Methods ln11',
+  'soil_depth', paste0(data.lvl0.df$method[c(19:20,23:24)], collapse = ' '), 'Methods ln 19-20;23-24',
+  'organic_carbon_density', paste0(data.lvl0.df$method[29:30], collapse = ' '), 'Methods ln 29-30',
+  'nitrogen_density', paste0(data.lvl0.df$method[29:30], collapse = ' '), 'Methods ln 29-30')
+  ) |>
+
+
+ bind_rows(
+    tribble(~of_variable, ~control_vocabulary, ~from_source,
+          ))|>
+
+pivot_longer(cols = c(unit, method),
+               names_to = 'is_type',
+               values_drop_na = TRUE,
+               values_to = 'with_entry')
+
+#data.lvl1.df <- list(
+ # meta = bind_rows(studyMeta, Table1Meta),
+  #primary = bind_rows(Table1Primary)|>
+   # arrange(row_id, column_name,
+    #        of_variable, is_type, with_entry, from_source)
+  #)
+#View(data.lvl1.df)
+
 ```
 
