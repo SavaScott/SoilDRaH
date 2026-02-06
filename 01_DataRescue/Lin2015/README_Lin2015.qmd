@@ -294,7 +294,7 @@ ggplot(fig1Data, aes(x = `x axis label`, y = y, fill = `UV treatment`)) +
 #| eval: false
 # You will want to repeat the line below to cross check each csv and md file in the
 #... data rescue. Having no lines flagged by this command will ensure that each character matches exactly.
-diff --strip-trailing-cr --suppress-common-lines -y Lin2015_Methods.md Lin2015_Methods_CS.md
+diff --strip-trailing-cr --suppress-common-lines -y Lin2015_Methods.md temp/Lin2015_Methods_CS.md
 ```
 
 {{< include Lin2015_Methods.md >}}
