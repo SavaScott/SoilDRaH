@@ -305,10 +305,9 @@ ggplot(fig1Data, aes(x = `x axis label`, y = y, fill = `UV treatment`)) +
 
 ## Figure 3
 
-Figure 3 was modified to create a subtitle from the different graph labels. Due to the large label for the y-axis, the units were dropped in the image, but can still be found in the csv. 
+Figure 3 was modified to create a subtitle from the different graph labels. Due to the large label for the y-axis, the units were dropped in the image, but can still be found in the csv. The trendline was also dropped from the image, as we are only recording data points.
 
 ```{r}
-
 
 library(dplyr)
 
@@ -318,6 +317,7 @@ fig3Caption <- read_csv(file = figure3.file,
 fig3Data <- read_csv(file = figure3.file,
                    skip = 1,
                    show_col_types = FALSE)
+
 fig3Data$`x value` <- as.numeric(fig3Data$`x value`)
 fig3Data$`y value` <- as.numeric(fig3Data$`y value`)
 
@@ -341,8 +341,7 @@ scale_shape_manual(
   values = c(
     "UV block" = 16,
     "UV pass" = 21
-  )
-  ) +
+  )) +
   scale_fill_manual(
     values = c(
       "UV block" = "black",
@@ -364,10 +363,7 @@ scale_shape_manual(
   labs(
     x = "Litter N%",
     y = "Cumulative microbial respiration") +
-  
-  theme_classic()
-
-
+   theme_classic()
 
 ```
 
