@@ -334,7 +334,7 @@ pivot_longer(cols = c(unit, method, control_vocabulary),
                values_drop_na = TRUE,
                values_to = 'with_entry')
 
-#### Create level 1 ?? Error with elevation
+#### Create level 1 ?? Error with elevation_id and not being able to find is_type
 
 data.lvl1.df <- list(
   meta = bind_rows(studyMeta, Table1Meta),
