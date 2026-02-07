@@ -303,6 +303,27 @@ ggplot(fig1Data, aes(x = `x axis label`, y = y, fill = `UV treatment`)) +
 
 ## Figure 2
 
+```{r}
+
+fig2Caption <- read_csv(file = figure2.file, 
+                                 n_max = 1, col_names = 'caption', 
+                                 show_col_types = FALSE)$caption
+fig2Data <- read_csv(file = figure2.file,
+                   skip = 1,
+                   show_col_types = FALSE)
+
+fig2Data$`x value` <- as.numeric(fig2Data$`x value`)
+fig2Data$`y value` <- as.numeric(fig2Data$`y value`)
+
+ggplot(fig2Data, aes(x = `x value`, y = `y value`, shape = `UV treatment`, fill = `UV treatment`)) +
+  geom_point(
+    size = 2,
+    color = "black",
+    stroke = 0.5) +
+  #need to add in SE difference bars and footnotes
+
+```
+
 ## Figure 3
 
 Figure 3 was modified to create a subtitle from the different graph labels. Due to the large label for the y-axis, the units were dropped in the image, but can still be found in the csv. The trendline was also dropped from the image, as we are only recording data points.
