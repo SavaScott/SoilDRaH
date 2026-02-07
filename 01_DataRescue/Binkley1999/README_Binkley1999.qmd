@@ -250,7 +250,7 @@ The `of_variable` being used here are:
 + mean_rainfall
 + elevation 
 + soil_class
-+ inital_planting
++ initial_planting
 + observation_year
 + core_description
 + soil_ph
@@ -261,7 +261,7 @@ The `of_variable` being used here are:
 
 #### Method section only ####
 
-studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~source,
+studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~from_source,
                      'region', 'value', '13 km NNE of downtown Hilo, HI', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                 'latitude', 'value', '19°50\'28.1" North', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                  'longitude', 'value', '155°7\'28.3" West', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
@@ -272,7 +272,7 @@ studyMeta <- tribble(~of_variable, ~is_type, ~with_entry, ~source,
                 'elevation', 'value', '350', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                 'elevation', 'unit', 'm', paste('Method ln3:', paste(data.lvl0.df$method[3], collapse = ' ')),
                 'soil_class', 'value', 'Kaiwiki thixotropic, isothermic Typic Hydrandepts', paste('Method ln4:',paste(data.lvl0.df$method[4], collapse = ' ')),
-                'inital_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
+                'initial_planting', 'value', '1994', paste('Method ln11:', data.lvl0.df$method[11]),
                 'soil_pH_water', 'value', '5-6', paste('Method ln4:', data.lvl0.df$method[4]),
                 'observation_year', 'value', '1997', paste('Method ln23:', data.lvl0.df$method[23]),
                 'sample_prep', 'value', 'oven dried at 100 C to constant weight', paste('Method ln22:', data.lvl0.df$method[22]),
@@ -311,7 +311,7 @@ Table1Meta <- Table1Primary |>
   #Don't keep the column name now that you have the units, cross link via the variable
   select(-column_name) |>
   
-   bind_rows(
+  bind_rows(
   tribble(~of_variable, ~method, ~from_source,
           'soil_pH_calcium_chloride', paste0(data.lvl0.df$method[25:26], collapse = ' '), 'Methods ln25-26',
           'soil_calcium_stock', paste0(data.lvl0.df$method[27], collapse = ' '), 'Methods ln27',
@@ -322,25 +322,29 @@ Table1Meta <- Table1Primary |>
   'plant_age', paste0(data.lvl0.df$method[11], collapse = ' '), 'Methods ln11',
   'soil_depth', paste0(data.lvl0.df$method[c(19:20,23:24)], collapse = ' '), 'Methods ln 19-20;23-24',
   'organic_carbon_density', paste0(data.lvl0.df$method[29:30], collapse = ' '), 'Methods ln 29-30',
-  'nitrogen_density', paste0(data.lvl0.df$method[29:30], collapse = ' '), 'Methods ln 29-30')
-  ) |>
-
+  'nitrogen_density', paste0(data.lvl0.df$method[29:30], collapse = ' '), 'Methods ln 29-30') ) |>
 
  bind_rows(
     tribble(~of_variable, ~control_vocabulary, ~from_source,
-          ))|>
+          'soil_class', 'Kaiwiki thixotropic: USDA classification for deep, well drained soils formed from weathered volcanic ash|isothermic Typic Hydrandept: USDA taxonomic class of deep, well drained soils formed in material weathered from basic volcanic ash', 'USDA')
+    ) |>
 
-pivot_longer(cols = c(unit, method),
+pivot_longer(cols = c(unit, method, control_vocabulary),
                names_to = 'is_type',
                values_drop_na = TRUE,
                values_to = 'with_entry')
 
-#data.lvl1.df <- list(
- # meta = bind_rows(studyMeta, Table1Meta),
-  #primary = bind_rows(Table1Primary)|>
-   # arrange(row_id, column_name,
-    #        of_variable, is_type, with_entry, from_source)
-  #)
+#### Create level 1 ?? Error with elevation
+
+data.lvl1.df <- list(
+  meta = bind_rows(studyMeta, Table1Meta),
+  primary = bind_rows(Table1Primary)|>
+    mutate(elevation_id = with_entry[of_variable == 'elevation'],
+           is_type = 'value',
+           .by = row_id) |>
+    arrange(row_id, elevation_id, column_name, 
+            of_variable, is_type, with_entry, from_source)
+  )
 #View(data.lvl1.df)
 
 ```
