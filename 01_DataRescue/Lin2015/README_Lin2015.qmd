@@ -303,6 +303,8 @@ ggplot(fig1Data, aes(x = `x axis label`, y = y, fill = `UV treatment`)) +
 
 ## Figure 2
 
+Figure 2 was modified to drop the units from the y-axis due to size constraints. 
+
 ```{r}
 
 fig2Caption <- read_csv(file = figure2.file, 
@@ -315,13 +317,37 @@ fig2Data <- read_csv(file = figure2.file,
 fig2Data$`x value` <- as.numeric(fig2Data$`x value`)
 fig2Data$`y value` <- as.numeric(fig2Data$`y value`)
 
+fig2Footnotes <- fig2Data |>
+distinct(`P value`) |>
+  mutate(
+    label = ifelse(`P value` == "-", NA, `P value`)
+    )
+
 ggplot(fig2Data, aes(x = `x value`, y = `y value`, shape = `UV treatment`, fill = `UV treatment`)) +
   geom_point(
     size = 2,
     color = "black",
     stroke = 0.5) +
-  #need to add in SE difference bars and footnotes
-
+      geom_errorbar(
+      aes(
+    ymin = `y value` - as.numeric(ifelse(`y value SE difference` == "-", NA, `y value SE difference`)),
+    ymax = `y value` + as.numeric(ifelse(`y value SE difference` == "-", NA, `y value SE difference`))
+  ),
+    width = 0.7) +
+  geom_text(
+    aes(
+       y = `y value` + 37,
+    label = ifelse(`P value` == "-", NA, `P value`)
+    ),
+    position = position_dodge(width = 0.9),
+    hjust = 0,
+    size = 4,
+    na.rm = TRUE) +
+  labs(
+    x = 'Days since the start of incubation',
+    y = 'Microbial respiration'
+  )
+ 
 ```
 
 ## Figure 3
