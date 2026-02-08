@@ -332,17 +332,14 @@ ggplot(fig2Data, aes(x = `x value`, y = `y value`, shape = `UV treatment`, fill 
       aes(
     ymin = `y value` - as.numeric(ifelse(`y value SE difference` == "-", NA, `y value SE difference`)),
     ymax = `y value` + as.numeric(ifelse(`y value SE difference` == "-", NA, `y value SE difference`))
-  ),
-    width = 0.7) +
-  geom_text(
-    aes(
+  ), width = 0.7) +
+  geom_text(aes(
        y = `y value` + 37,
-    label = ifelse(`P value` == "-", NA, `P value`)
-    ),
-    position = position_dodge(width = 0.9),
-    hjust = 0,
-    size = 4,
-    na.rm = TRUE) +
+       label = ifelse(`P value` == "-", NA, `P value`)),
+       position = position_dodge(width = 0.9),
+       hjust = 0,
+       size = 4,
+       na.rm = TRUE) +
   labs(
     x = 'Days since the start of incubation',
     y = 'Microbial respiration'
