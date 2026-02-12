@@ -333,17 +333,18 @@ pivot_longer(cols = c(unit, method, control_vocabulary),
                values_drop_na = TRUE,
                values_to = 'with_entry')
 
-#### Create level 1 ?? Error with elevation_id and not being able to find is_type
+#### Create level 1
 
-data.lvl1.df <- list(meta = bind_rows(studyMeta, Table1Meta),
+data.lvl1.df <- list(
+  meta = bind_rows(studyMeta, Table1Meta),
   primary = bind_rows(Table1Primary)|>
-    mutate(elevation_id = with_entry[of_variable == 'elevation'],
+    mutate(age_id = with_entry[of_variable == 'plant_age'],
            is_type = 'value',
            .by = row_id) |>
-    arrange(row_id, elevation_id, column_name, 
+    arrange(row_id, age_id, column_name,
             of_variable, is_type, with_entry, from_source)
   )
-#View(data.lvl1.df)
+View(data.lvl1.df)
 
 ```
 
